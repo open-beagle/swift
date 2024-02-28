@@ -9,7 +9,7 @@ python .beagle\0.5b-chat.py
 # 4B
 python .beagle\4b-chat.py
 
-# 7B failed
+# 7B
 python .beagle\7b-chat.py
 
 # ENV CHECK
