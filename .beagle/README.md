@@ -58,12 +58,14 @@ pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/
 ## pytorch on windows
 
 ```powershell
-# cuda11.8
+# Nvidia cuda11.8
 # https://developer.nvidia.com/cuda-toolkit-archive
-
 # torch2.2.1
 # https://pytorch.org/
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+
+# Mac or CPU
+pip install torch torchvision torchaudio
 ```
 
 ## install libs
