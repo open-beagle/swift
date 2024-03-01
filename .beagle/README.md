@@ -3,6 +3,9 @@
 ## samples
 
 ```bash
+# venv
+.venv\Scripts\activate
+
 # 0.5B
 python .beagle\0.5b-chat.py
 
@@ -26,7 +29,10 @@ python .beagle\pytorch.py
 7b    113.9s
 
 # 4070 laptop
-
+# 7b use 55%~100% GPUCore 5.9GB~7.0GB/8GB GPUMEM
+0.5b  1.8s
+4b    23.78s
+7b    62.6s
 ```
 
 ## windows allow ps scripts
@@ -44,14 +50,9 @@ Set-ExecutionPolicy -ExecutionPolicy Bypass
 # https://www.python.org/ftp/python/3.12.2/python-3.12.2-amd64.exe
 python -m venv $PWD/.venv
 
-# Virtual Python Environment
-pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/
-
-pip install virtualenv
-
-virtualenv --python "C:\Program Files\Python312\python.exe" .venv
-
 .venv\Scripts\activate
+
+pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/
 ```
 
 ## pytorch on windows
@@ -62,20 +63,13 @@ virtualenv --python "C:\Program Files\Python312\python.exe" .venv
 
 # torch2.2.1
 # https://pytorch.org/
-pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
-
-# add in $PATH
-C:\Users\Mengk\AppData\Roaming\Python\Python312\Scripts
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 ```
 
 ## install libs
 
 ```powershell
 # https://modelscope.cn/docs/LLM推理文档
-
-# 设置pip全局镜像
-pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/
-
 pip install -e .[llm]
 
 pip install -r requirements/framework.txt  -U
@@ -92,5 +86,5 @@ git remote add upstream git@github.com:modelscope/swift.git
 
 git fetch upstream
 
-git merge v1.6.1
+git merge v1.6.3
 ```
